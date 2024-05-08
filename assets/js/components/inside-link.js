@@ -6,6 +6,7 @@ class InsideLink extends HTMLElement {
         this.anchor.setAttribute('href', '#');
         const slot = document.createElement('slot')
         this.anchor.appendChild(slot)
+        this.anchor.style.all = 'unset'
         shadow.appendChild(this.anchor)
     }
 
@@ -22,7 +23,7 @@ class InsideLink extends HTMLElement {
             event.preventDefault()
             const newRoute = this.anchor.getAttribute('href');
             history.pushState(null, '', newRoute);
-            const customEvent = new CustomEvent('historialCambiado', {
+            const customEvent = new CustomEvent('historyChange', {
                 detail: {
                     newRoute
                 }
@@ -31,9 +32,23 @@ class InsideLink extends HTMLElement {
         })
     }
 
+    _handleActive(){
+        const currentPath = window.location.pathname;
+        const linkPath = new URL(this.anchor.href).pathname;
+        if (currentPath === linkPath){
+            this.classList.add('active');
+        } else {
+            this.classList.remove('active');
+        }
+    }
+
     connectedCallback() {
         this._handleProps()
         this._handleClick()
+        this._handleActive()
+        window.addEventListener('historyChange',()=> {
+            this._handleActive()
+        })
     }
 }
 

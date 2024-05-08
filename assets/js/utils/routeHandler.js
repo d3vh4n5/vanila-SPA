@@ -15,6 +15,6 @@ window.addEventListener('popstate', () => {
     handleRouter(window.location.pathname);
 });
 
-window.addEventListener('historialCambiado', () => {
+window.addEventListener('historyChange', () => {
     handleRouter(window.location.pathname)
 });
