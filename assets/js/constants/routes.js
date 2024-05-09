@@ -1,5 +1,15 @@
 export const ROUTES = {
-    "/": "pages/home.html",
-    "/index.html": "pages/home.html",
-    "/about": "pages/about.html"
+    "/": {
+        html: "pages/home.html",
+        js: "",
+    },
+    "/index.html": {
+        html: "pages/home.html",
+        js: ""
+    },
+    "/about": {
+        html: "pages/about.html",
+        js: 'assets/js/modules/about.js'
+    }
 }
+
