@@ -31,7 +31,11 @@ li{
 }
 
 .active {
-    background-color: red;
+    background-color: red !important;
+
+    &:hover {
+        background-color: orangered !important;
+    }
 }
 
 main{
