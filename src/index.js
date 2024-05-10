@@ -1,3 +1,5 @@
 import './utils/routeHandler.js'
 import './components/inside-link.js'
 import './components/header-component.js'
+import './assets/css/styles.css'
+import img from './assets/img/node.png'

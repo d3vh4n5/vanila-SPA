@@ -1,3 +1,4 @@
+const template = `
 <header>
     <h1>Logo</h1>
     <nav>
@@ -20,3 +21,13 @@
         </ul>
     </nav>
 </header>
+`
+
+class HeaderComponent extends HTMLElement{
+    constructor(){
+        super()
+        this.innerHTML = template
+    }
+}
+
+customElements.define('header-component', HeaderComponent);
