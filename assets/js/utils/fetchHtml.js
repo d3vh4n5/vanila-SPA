@@ -1,7 +1,7 @@
 export async function fetchHtml(path, callback) {
     try{
         const app = document.querySelector('main')
-        app. innerHTML = 'Cargando...'
+        // app. innerHTML = 'Cargando...'
         const response = await fetch(path)
         const html = await response.text()
         app.innerHTML = html
